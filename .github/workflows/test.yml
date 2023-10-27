@@ -8,8 +8,11 @@ jobs:
   Testing:
     runs-on: ubuntu-latest
     steps:
-      - name: Snyk test 
-      - uses: actions/checkout@v2
+      - name: checkout code
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Run Snyk to check configuration files for security issues
         # Snyk can be used to break the build when it detects security issues.
         # In this case we want to upload the issues to GitHub Code Scanning
@@ -25,20 +28,11 @@ jobs:
         with:
           sarif_file: snyk.sarif
 
-      - name: SonarCloud
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: GitGuardian scan
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: GitGuardian scan
         uses: GitGuardian/ggshield/actions/secret@main
@@ -57,8 +51,6 @@ jobs:
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
       - name: Run linters
-      - name: Check out Git repository
-        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v1
