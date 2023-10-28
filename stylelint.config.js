@@ -11,10 +11,10 @@ module.exports = {
     ],
     'order/properties-alphabetical-order': true, // Enfore alphabetical order of properties
     'selector-pseudo-element-colon-notation': 'single', // Use single colon for pseudo-elements (::before)
-    #"plugin/stylelint-css": true,
-    #"property-no-unknown": true
-    #"at-rule-no-unknown": null,
-    #"css/at-rule-no-unknown": true,
-    #"no-descending-specificity": null
+    //"plugin/stylelint-css": true,
+    //"property-no-unknown": true
+    //"at-rule-no-unknown": null,
+    //"css/at-rule-no-unknown": true,
+    //"no-descending-specificity": null
   },
 };
