@@ -25,11 +25,22 @@ h1, h3 {
 a {
     color: var(--alt-color);
     text-decoration: none;
+    transition: 0.4s;
 }
 
-a {
+/*a {
     text-decoration: none;
     transition: 0.4s;
+}*/
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul a {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 a:hover {
@@ -62,9 +73,9 @@ nav {
     z-index: 99;
 }
 
-nav a {
+/*nav a {
     text-decoration: none;
-}
+}*/
 
 nav .container > div, nav .menu {
     align-items: center;
@@ -83,11 +94,11 @@ nav ul li {
     margin: 0 0.5em;
 }
 
-nav ul a {
+/*nav ul a {
     font-size: 0.8em;
     font-weight: 700;
     text-transform: uppercase;
-}
+}*/
 
 nav .logo {
     display: inline-block;
@@ -383,6 +394,26 @@ footer .menu ul {
     padding: 0;
 }
 
+.social-media {
+    align-items: center;
+    border-bottom: 1px #06121c solid;
+    border-top: 1px #06121c solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3em 2em;
+    text-align: center;
+}
+
+.social-media a {
+    font-size: 1.5em;
+    margin: 0 1em;
+}
+
+.footer-bottom a {
+    margin: 2em 0;
+}
+
 footer .main-link a {
     background-image: linear-gradient(
         0deg, var(--primary-color) 
@@ -405,7 +436,7 @@ footer .main-link a:hover {
     background-size: 100% 0.3em;
 }
 
-.social-media {
+/*.social-media {
     align-items: center;
     border-bottom: 1px #06121c solid;
     border-top: 1px #06121c solid;
@@ -419,7 +450,7 @@ footer .main-link a:hover {
 .social-media a {
     font-size: 1.5em;
     margin: 0 1em;
-}
+}*/
 
 .footer-bottom img {
     display: block;
@@ -434,7 +465,7 @@ footer .main-link a:hover {
     text-align: center;
 }
 
-.footer-bottom a, .footer-bottom p, .footer-bottom img {
+.footer-bottom p, .footer-bottom img {
     margin: 2em 0;
 }
 
