@@ -25,12 +25,8 @@ h1, h3 {
 a {
     color: var(--alt-color);
     text-decoration: none;
-}
-
-a {
-    text-decoration: none;
     transition: 0.4s;
-}*/
+}
 
 nav a {
     text-decoration: none;
@@ -545,11 +541,15 @@ footer .main-link a:hover {
         font-size: 14px;
     }
 
+    footer .container {
+        flex-direction: column;
+    }
+
     .service .container {
         grid-template-columns: 1fr 1fr;
     }
 
-    footer .menu, footer .container {
+    footer .menu {
         flex-direction: column;
     }
 
