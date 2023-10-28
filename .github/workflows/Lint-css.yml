@@ -24,7 +24,10 @@ jobs:
           node-version: 14
 
       - name: Install Depedencies
-        run: npm install stylelint stylelint-config-standard --save-dev
+        run: |
+          npm install stylelint stylelint-config-standard --save-dev
+          npm install stylelint stylelint-css -save-dev
+        
 
       - name: Run linters
         run: npx stylelint "**/*.css"
