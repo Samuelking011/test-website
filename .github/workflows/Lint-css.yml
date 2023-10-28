@@ -1,0 +1,39 @@
+name: Lint CSS Files
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+ workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  Lint-css:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install Depedencies
+        run: |
+          npm install stylelint stylelint-config-standard --save-dev
+          npm install stylelint-order --save-dev
+          npm i postcss-safe-parser
+          #npm install stylelint stylelint-css -save-dev
+        
+
+      - name: Run linters
+        #run: npx stylelint "**/*.css" --auto_fix
+        uses: wearerequired/lint-action@v2
+        with:
+          stylelint: true
+          auto_fix: true
