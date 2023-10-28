@@ -1,4 +1,4 @@
-/*=== Variables ===*/
+/* === Variables === */
 :root {
     --primary-color: #00ac9d;
     --secondary-color: #00467f;
@@ -25,10 +25,9 @@ h1, h3 {
 a {
     color: var(--alt-color);
     text-decoration: none;
-    transition: 0.4s;
 }
 
-/*a {
+a {
     text-decoration: none;
     transition: 0.4s;
 }*/
@@ -42,6 +41,11 @@ nav ul a {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+/*a {
+    text-decoration: none;
+    transition: 0.4s;
+}*/
 
 a:hover {
     color: #ccc;
@@ -316,9 +320,9 @@ header p {
 
 /* == Services Section == */
 .services .container {
-    place-items: center center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    place-items: center center;
     text-align: center;
 }
 
