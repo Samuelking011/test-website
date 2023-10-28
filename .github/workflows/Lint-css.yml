@@ -5,6 +5,10 @@ on:
   # but only for the main branch
  workflow_dispatch:
 
+ permissions:
+  checks: write
+  contents: write
+
 jobs:
   Lint-css:
     name: Run linters
@@ -20,7 +24,9 @@ jobs:
           node-version: 14
 
       - name: Install Depedencies
-        run: npm install stylelint stylelint-config-standard --save-dev
+        run: npm install stylelint
 
       - name: Run linters
-        run: npx stylelint "**/*.css"
+        uses: wearerequired/lint-action@v2
+        with:
+          stylelint: true
