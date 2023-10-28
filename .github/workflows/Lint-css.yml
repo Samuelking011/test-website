@@ -28,12 +28,11 @@ jobs:
           npm install stylelint stylelint-config-standard --save-dev
           npm install stylelint-order --save-dev
           npm i postcss-safe-parser
-          #npm install stylelint stylelint-css -save-dev
         
 
       - name: Run linters
-        #run: npx stylelint "**/*.css" --auto_fix
-        uses: wearerequired/lint-action@v2
-        with:
-          stylelint: true
-          auto_fix: true
+        run: npx stylelint "**/*.css" --auto_fix
+        #uses: wearerequired/lint-action@v2
+        #with:
+          #stylelint: true
+          #auto_fix: true
