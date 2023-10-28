@@ -26,6 +26,7 @@ jobs:
       - name: Install Depedencies
         run: |
           npm install stylelint stylelint-config-standard --save-dev
+          npm install stylelint-order --save-dev
           #npm install stylelint stylelint-css -save-dev
         
 
