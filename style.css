@@ -1,4 +1,4 @@
-/*=== Variables ===*/
+/* === Variables === */
 :root {
     --primary-color: #00ac9d;
     --secondary-color: #00467f;
@@ -305,9 +305,9 @@ header p {
 
 /* == Services Section == */
 .services .container {
-    place-items: center center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    place-items: center center;
     text-align: center;
 }
 
