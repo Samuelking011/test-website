@@ -32,4 +32,4 @@ jobs:
         
 
       - name: Run linters
-        run: npx stylelint "**/*.css" 
+        run: npx stylelint "**/*.css" --auto_fix
