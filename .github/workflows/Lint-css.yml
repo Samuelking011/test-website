@@ -31,8 +31,7 @@ jobs:
         
 
       - name: Run linters
-        run: npx stylelint "**/*.css" --fix
-        #uses: wearerequired/lint-action@v2
-        #with:
-          #stylelint: true
-          #auto_fix: true
+        uses: wearerequired/lint-action@v2
+        with:
+          stylelint: true
+          auto_fix: true
