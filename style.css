@@ -25,12 +25,14 @@ h1, h3 {
 a {
     color: var(--alt-color);
     text-decoration: none;
-}
-
-a {
     text-decoration: none;
     transition: 0.4s;
 }
+
+/*a {
+    text-decoration: none;
+    transition: 0.4s;
+}*/
 
 a:hover {
     color: #ccc;
