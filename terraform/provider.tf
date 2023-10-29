@@ -1,4 +1,4 @@
-/*terraform {
+terraform {
   cloud {
     organization = "Sammyvirtual-solution"
 
@@ -6,7 +6,7 @@
       name = "test_website"
     }
   }
-}*/
+}
 
 provider "aws" {
         region = "us-east-1"
