@@ -2,7 +2,7 @@
 resource "aws_instance" "ec2_instance" {
     ami = "${var.ami_id}"
     count = "${var.number_of_instances}"
-    subnet_id = aws_subnet.ec2_public[count.index]
+    subnet_id = aws_subnet.ec2_public[count.index].id
     instance_type = "${var.instance_type}"
     key_name = "${var.ami_key_pair_name}"
 
