@@ -59,7 +59,7 @@ const puppeteer = require('puppeteer');
     // Add more tests for your HTML page as needed
 }, 30000);*/
 
-test('renders the index.html correctly', async () => {
+(async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     
