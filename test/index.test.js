@@ -14,38 +14,44 @@ describe('Full HTML Page Test', () => {
     });
 
     test('Title is correct', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const title = await page.title();
         expect(title).toBe('WestJet');
     }, 30000);
 
     test('Header is present', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const header = await page.$('header');
         expect(header).not.toBeNull;
     });
 
     test('Heading is present', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const heading = await page.$('h1');
         expect(heading).not.toBeNull;
     });
 
     test('Section is present', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const section = await page.$('section');
         expect(section).not.toBeNull;
     });
 
     test('Nav is present', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const nav = await page.$('nav');
         expect(nav).toBeTruthy();
         //expect(nav).not.toBeNull;
     });
 
     test('Div element is present', async () => {
-        await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+        await page.goto(githubRepoUrl);
         const div = await page.$('div');
         expect(div).not.toBeNull;
     });
