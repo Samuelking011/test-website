@@ -1,5 +1,6 @@
 terraform {
-  cloud {
+  required_version = ">= 0.13.5"
+  backend "remote" {
     organization = "Sammyvirtual-solution"
 
     workspaces {
