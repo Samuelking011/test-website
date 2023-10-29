@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-describe('Full HTML Page Test', () => {
+/*describe('Full HTML Page Test', () => {
     let browser;
     let page;
 
@@ -57,12 +57,15 @@ describe('Full HTML Page Test', () => {
     });
 
     // Add more tests for your HTML page as needed
-}, 30000);
+}, 30000);*/
 
-/*test('renders the index.html correctly', async () => {
+test('renders the index.html correctly', async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('file://C:/Users/olayi/OneDrive/Documents/Dev class/Final Project/index.html');
+    
+    
+    const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
+    await page.goto(githubRepoUrl);
     
     // Example: Check if the title of the page is correct
     const title = await page.title();
@@ -75,4 +78,4 @@ describe('Full HTML Page Test', () => {
     //Additional checks can be added based on your HTML contents
 
     await browser.close();
-}, 30000)*/
+}, 30000)
