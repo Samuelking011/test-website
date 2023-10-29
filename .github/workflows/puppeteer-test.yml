@@ -18,5 +18,4 @@ jobs:
       - name: Install Puppeteer and Run Tests
         run: |
           npm install puppeteer
-          node "**/*.test.js"
-          #node test/index.test.js
+          node test/index.test.js
