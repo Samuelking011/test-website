@@ -26,10 +26,6 @@ jobs:
       - name: Install Depedencies
         run: |
           npm ci
-          #npm install stylelint stylelint-config-standard
-          #npm install stylelint-order
-          #npm i postcss-safe-parser
-        
 
       - name: Run linters
         #run: npx stylelint "**/*.css" --fix
