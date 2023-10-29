@@ -1,64 +1,5 @@
 const puppeteer = require('puppeteer');
 
-/*describe('Full HTML Page Test', () => {
-    let browser;
-    let page;
-
-    beforeAll(async () => {
-        browser = await puppeteer.launch();
-        page = await browser.newPage();
-    });
-
-    afterAll(async () => {
-        await browser.close();
-    });
-
-    test('Title is correct', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const title = await page.title();
-        expect(title).toBe('WestJet');
-    }, 30000);
-
-    test('Header is present', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const header = await page.$('header');
-        expect(header).not.toBeNull;
-    });
-
-    test('Heading is present', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const heading = await page.$('h1');
-        expect(heading).not.toBeNull;
-    });
-
-    test('Section is present', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const section = await page.$('section');
-        expect(section).not.toBeNull;
-    });
-
-    test('Nav is present', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const nav = await page.$('nav');
-        expect(nav).toBeTruthy();
-        //expect(nav).not.toBeNull;
-    });
-
-    test('Div element is present', async () => {
-        const githubRepoUrl = 'https://github.com/Samuelking011/test-website.git';
-        await page.goto(githubRepoUrl);
-        const div = await page.$('div');
-        expect(div).not.toBeNull;
-    });
-
-    // Add more tests for your HTML page as needed
-}, 30000);*/
-
 (async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -71,9 +12,23 @@ const puppeteer = require('puppeteer');
     const title = await page.title();
     expect(title).toBe('WestJet')
 
-    // Example: Check if a specific element with ID "heading" exist
+    // Example: Check if a specific element with ID exist
+    const header = await page.$('header');
+    expect(header).not.toBeNull;
+
+    const heading = await page.$('h1');
+    expect(heading).not.toBeNull;
+
+    const section = await page.$('section');
+    expect(section).not.toBeNull;
+
+    const nav = await page.$('nav');
+    expect(nav).toBeTruthy();
+
     const div = await page.$('div');
     expect(div).toBeTruthy();
+
+
 
     //Additional checks can be added based on your HTML contents
 
