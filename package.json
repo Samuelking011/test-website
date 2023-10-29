@@ -1,0 +1,31 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "This is a colone of WestJet airline website",
+  "main": "jest.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuelking011/test-website.git"
+  },
+  "keywords": [
+    "Test Website"
+  ],
+  "author": "Samuel Olayinka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samuelking011/test-website/issues"
+  },
+  "homepage": "https://github.com/Samuelking011/test-website#readme",
+  "devDependencies": {
+    "puppeteer": "^21.4.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3"
+  }
+}
