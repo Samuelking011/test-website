@@ -16,6 +16,7 @@ jobs:
           node-version: 16
 
       - name: Install Puppeteer and Run Tests
-        run: |
-          npm install puppeteer
-          node test/index.test.js
+        run: npm install puppeteer
+
+      - name: Install Puppeteer and Run Tests
+        run: node test/index.test.js
