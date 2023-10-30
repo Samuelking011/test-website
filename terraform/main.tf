@@ -6,18 +6,10 @@ resource "aws_instance" "ec2_instance" {
     instance_type = "${var.instance_type}"
     key_name = "${var.ami_key_pair_name}"
 
+    user_data = file("user_data.sh")  # Read the script content from user_data.sh file
+
     tags = {
       Name = "Terraform ec2"
     }
-
-    user_data = <<-EOF
-            #!/bin/bash
-            sudo apt update -y
-            sudo apt update -y
-            sudo apt install -y docker.io
-            sudo systemctl enable docker
-            sudo systemctl start docker
-            sudo usermod -aG docker ubuntu
-            sudo yum install npm -y
-            EOF
+   
 }

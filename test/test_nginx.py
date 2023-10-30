@@ -8,7 +8,7 @@ class TestNginxConfig(unittest.TestCase):
     def setUp(self):
        # Start your Docker container here
         # Use stdout=subprocess.PIPE to capture the output
-        process = subprocess.Popen(["docker", "run", "-d", "-p", "8080:80", "website:v1"], stdout=subprocess.PIPE)
+        process = subprocess.Popen(["docker", "run", "-d", "-p", "8080:80", "website"], stdout=subprocess.PIPE)
         
         # Read the output of the process and decode it from bytes to string
         self.container_id = process.stdout.read().decode().strip()
