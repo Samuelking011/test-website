@@ -2,11 +2,12 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "This is a colone of WestJet airline website",
-  "main": "jest.config.js",
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "jest"
   },
   "repository": {
@@ -31,6 +32,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
     "animate.css": "^4.1.1",
+    "express": "^4.18.2",
     "swiper": "^11.0.3",
     "wow.js": "^1.2.2"
   }
