@@ -18,7 +18,7 @@ jobs:
     - name: Snyk IaC Test
       continue-on-error: true
       run: |
-        echo "snyk iac test"
+        snyk iac test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
