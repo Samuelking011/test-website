@@ -16,10 +16,13 @@ jobs:
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and Push Docker Image
+    - name: Build Docker Image
       run: |
         docker build -t website .
         docker tag website ${{ secrets.DOCKER_USERNAME }}/website:latest
+        
+    - name: Push Docker Image
+      run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/website:latest
 
         - name: Setup Terraform
