@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Terraform Apply
 
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
             run:
             terraform -chdir=terraform validate 
     
-        - name: Terraform Plan 
+        - name: Terraform Apply 
             run: 
             terraform -chdir=terraform apply -auto-approve
     
