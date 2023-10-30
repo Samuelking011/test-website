@@ -17,6 +17,6 @@ jobs:
 
     - name: Snyk IaC Test
       run: |
-        snyk iac test --all-projects
+        snyk iac test
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
