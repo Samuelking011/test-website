@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "jest"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,13 @@
   },
   "homepage": "https://github.com/Samuelking011/test-website#readme",
   "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
     "puppeteer": "^21.4.1",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
