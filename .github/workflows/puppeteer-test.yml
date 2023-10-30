@@ -19,4 +19,6 @@ jobs:
         run: npm install puppeteer
 
       - name: Run Tests
-        run: node index.test.js
+        run: |
+          node test/index.test.js
+          echo: "Test successful."
