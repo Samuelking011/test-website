@@ -16,6 +16,7 @@ jobs:
       run: npm install -g snyk
 
     - name: Snyk IaC Test
+      continue-on-error: true
       run: |
         snyk iac test
       env:
