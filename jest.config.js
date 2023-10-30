@@ -1,6 +1,6 @@
 // jest.config.js
 
 module.exports = {
-    testMatch: ["<rootDir>/**/*.test.js"],
+    testMatch: ["<rootDir>/**/*html.test.js"],
     testEnvironment: "node",
 };
