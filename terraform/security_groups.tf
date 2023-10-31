@@ -6,6 +6,15 @@ resource "aws_security_group" "ec2_elb" {
     description     = "SG for ELB to access the EC2"
     vpc_id          = aws_vpc.ec2_vpc.id
 
+     ingress {
+        description         = "Allow SSH access from anywhere"
+        from_port           = 22
+        to_port             = 22
+        protocol            = "tcp"
+        cidr_blocks         = ["0.0.0.0/0"]
+        ipv6_cidr_blocks    = ["::/0"]
+    }
+
     ingress {
         description         = "Allow HTTP access from anywhere"
         from_port           = 80
@@ -34,14 +43,6 @@ resource "aws_security_group" "ec2_tasks" {
     name                = "${var.app_name}-ec2-tasks-sg"
     description         = "SG for EC2 tasks to allow access only from the ELB"
     vpc_id              = aws_vpc.ec2_vpc.id
-
-    ingress {
-        description     = "Allow application access form ${var.app_name}-elb-sg"
-        from_port       = 22
-        to_port         = 22
-        protocol        = "tcp"
-        security_groups = [aws_security_group.ec2_elb.id]
-    }
 
     ingress {
         description     = "Allow application access form ${var.app_name}-elb-sg"
