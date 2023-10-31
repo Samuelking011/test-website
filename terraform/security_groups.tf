@@ -37,11 +37,20 @@ resource "aws_security_group" "ec2_tasks" {
 
     ingress {
         description     = "Allow application access form ${var.app_name}-elb-sg"
+        from_port       = 22
+        to_port         = 22
+        protocol        = "tcp"
+        security_groups = [aws_security_group.ec2_elb.id]
+    }
+
+    ingress {
+        description     = "Allow application access form ${var.app_name}-elb-sg"
         from_port       = 80
         to_port         = 80
         protocol        = "tcp"
         security_groups = [aws_security_group.ec2_elb.id]
     }
+
 
     egress {
         from_port        = 0

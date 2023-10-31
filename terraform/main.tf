@@ -6,6 +6,8 @@ resource "aws_instance" "ec2_instance" {
     instance_type = "${var.instance_type}"
     key_name = "${var.ami_key_pair_name}"
 
+    security_groups = [aws_security_group.ec2_tasks.id]
+
     user_data = file("user_data.sh")  # Read the script content from user_data.sh file
 
     tags = {
