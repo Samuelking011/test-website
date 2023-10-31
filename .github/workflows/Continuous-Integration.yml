@@ -1,0 +1,79 @@
+name: continuous Integration (CI)
+
+on:
+  push:
+    branches:
+        - main
+        
+  pull_request:
+
+permissions:
+    checks: write
+    contents: write
+
+jobs:
+  CI-CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+        id: step-1
+
+      - name: Run Tests
+        run: node test/index.test.js
+        id: step-2
+        if: success() && steps.step-1.outputs.result == 'success'
+
+      - name: Install Depedencies
+        run: npm ci
+        id: step-3
+        if: success() && steps.step-2.outputs.result == 'success'
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        id: step-4
+        with:
+          stylelint: true
+          auto_fix: true
+        if: success() && steps.step-3.outputs.result == 'success'
+
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+        id: step-5
+        if: success() && steps.step-4.outputs.result == 'success'
+    
+      - name: Snyk IaC vulnerability Test
+        continue-on-error: true
+        run: snyk iac test
+        id: step-6
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        if: success() && steps.step-5.outputs.result == 'success'
+      
+      - name: Run Snyk to check configuration files for security issues
+        # Snyk can be used to break the build when it detects security issues.
+        # In this case we want to upload the issues to GitHub Code Scanning
+        continue-on-error: true
+        uses: snyk/actions/iac@master
+        id: step-7
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif
+        if: success() && steps.step-6.outputs.result == 'success'
+          
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        id: step-8
+        with:
+          sarif_file: snyk.sarif
+        if: success() && steps.step-7.outputs.result == 'success'
+          
