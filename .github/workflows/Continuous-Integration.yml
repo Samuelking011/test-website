@@ -24,58 +24,20 @@ jobs:
           node-version: 16
 
       - name: Install Puppeteer
-        run: echo "npm install puppeteer"
-        id: step-1
+        run: npm install puppeteer
 
       - name: Run Tests
-        run: echo "node test/index.test.js"
-        id: step-2
-        if: success() && steps.step-1.outputs.result == 'success'
+        run: node test/index.test.js
 
       - name: Install Depedencies
-        run: echo "npm ci"
-        id: step-3
-        if: success() && steps.step-2.outputs.result == 'success'
+        run: |
+          npm ci
 
       - name: Run linters
+        #run: npx stylelint "**/*.css" --fix
         uses: wearerequired/lint-action@v2
-        id: step-4
         with:
           stylelint: true
           auto_fix: true
-             echo "success"
-        if: success() && steps.step-3.outputs.result == 'success'
 
-      - name: Install Snyk CLI
-        run: echo "npm install -g snyk"
-        id: step-5
-        if: success() && steps.step-4.outputs.result == 'success'
-    
-      - name: Snyk IaC vulnerability Test
-        continue-on-error: true
-        run: echo "snyk iac test"
-        id: step-6
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        if: success() && steps.step-5.outputs.result == 'success'
-      
-      - name: Run Snyk to check configuration files for security issues
-        # Snyk can be used to break the build when it detects security issues.
-        # In this case we want to upload the issues to GitHub Code Scanning
-        continue-on-error: true
-        uses: snyk/actions/iac@master
-        id: step-7
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --sarif-file-output=snyk.sarif
-              echo "success"
-        if: success() && steps.step-6.outputs.result == 'success'
-          
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
-        id: step-8
-        with:
-          sarif_file: snyk.sarif
-        if: success() && steps.step-7.outputs.result == 'success'
-          
+        
