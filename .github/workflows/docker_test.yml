@@ -39,6 +39,12 @@ jobs:
       - name: Run Docker container
         run: docker run -d --name my-container -p 8080:80 ${{ secrets.DOCKERHUB_USERNAME }}/website:latest
 
+      - name: Run NGINX unit test
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python test/test-nginx.py
+     
       - name: Wait for the container to start
         run: sleep 60
 
