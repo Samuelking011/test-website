@@ -40,7 +40,7 @@ jobs:
         run: docker run -d --name my-container -p 8080:80 ${{ secrets.DOCKERHUB_USERNAME }}/website:latest
 
       - name: Wait for the container to start
-        run: sleep 20
+        run: sleep 60
 
       - name: Stop and remove Docker container
         run: docker stop my-container && docker rm my-container
