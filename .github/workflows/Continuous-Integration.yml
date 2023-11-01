@@ -59,7 +59,7 @@ jobs:
             auto_fix: true
     
     job3:
-      name: Snyk Vulnerability test
+      name: Run Snyk Vulnerability test
       runs-on: ubuntu-latest
       needs: job2
       steps:
@@ -98,4 +98,43 @@ jobs:
           with:
             sarif_file: snyk.sarif
 
+    job4:
+      name: Run SonarCloud Scan
+      runs-on: ubuntu-latest
+      needs: job3
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0  
+
+        - name: SonarCloud Scan
+          uses: SonarSource/sonarcloud-github-action@master
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            
+    job5:
+      name: Run GitGuardian scan
+      runs-on: ubuntu-latest
+      needs: job4
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0 # fetch all history so multiple commits can be scanned
+        - name: GitGuardian scan
+          uses: GitGuardian/ggshield/actions/secret@main
+          env:
+            GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+            GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+            GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+            GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+            GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
         
+        - name: GitGuardian iac scan
+          uses: GitGuardian/ggshield/actions/iac@main
+          #with:
+            #args: ./terraform/ --minimum-severity CRITICAL # pass arguments to the action. If missing, will scan the current directory
+          env:
+            GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
