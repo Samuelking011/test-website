@@ -53,3 +53,6 @@ jobs:
       - name: Run tests
         run: |
           python test/test_nginx.py
+        env:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
