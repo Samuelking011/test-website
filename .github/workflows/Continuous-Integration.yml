@@ -8,10 +8,11 @@ on:
         
   #pull_request:
 
-#permissions:
-    #checks: write
-    #contents: write
-
+permissions:
+        contents: write # for actions/checkout to fetch code
+        security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+        checks: write
+        
 jobs:
     job1: 
       name: Run HTML Unit Test
@@ -62,42 +63,18 @@ jobs:
       runs-on: ubuntu-latest
       needs: job2
       steps:
-        - uses: actions/checkout@v3
+        - name: Check out code
+          uses: actions/checkout@v3
+          
         - name: Set up Snyk CLI to check for security issues
-          # Snyk can be used to break the build when it detects security issues.
-          # In this case we want to upload the SAST issues to GitHub Code Scanning
           uses: snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb
-  
-          # For Snyk Open Source you must first set up the development environment for your application's dependencies
-          # For example for Node
-          #- uses: actions/setup-node@v3
-          #  with:
-          #    node-version: 16
-  
-          env:
-            # This is where you will need to introduce the Snyk API token created with your Snyk account
-            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  
-          # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
-          # Use || true to not fail the pipeline
-        #- name: Snyk Code test
-         # run: snyk code test --sarif-file-output > snyk.sarif || true
-  
-        - name: Run Snyk to check configuration files for security issues
-          # Snyk can be used to break the build when it detects security issues.
-          # In this case we want to upload the issues to GitHub Code Scanning
-          continue-on-error: true
-          uses: snyk/actions/iac@master
           env:
             SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          with:
-              args: --sarif-file-output=snyk.sarif
   
           # Runs Snyk Open Source (SCA) analysis and uploads result to Snyk.
         - name: Snyk Open Source monitor
           run: snyk monitor --all-projects
           env:
-            # This is where you will need to introduce the Snyk API token created with your Snyk account
             SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   
           # Runs Snyk Infrastructure as Code (IaC) analysis and uploads result to Snyk.
@@ -105,15 +82,15 @@ jobs:
         - name: Snyk IaC test and report
           run: snyk iac test --report || true
           env:
-            # This is where you will need to introduce the Snyk API token created with your Snyk account
             SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   
-          # Build the docker image for testing
-        #- name: Build a Docker image
-          #run: docker build -t your/image-to-test .
-          # Runs Snyk Container (Container and SCA) analysis and uploads result to Snyk.
-        #- name: Snyk Container monitor
-          #run: snyk container monitor your/image-to-test --file=Dockerfile
+        - name: Run Snyk to check configuration files for security issues
+          continue-on-error: true
+          uses: snyk/actions/iac@master
+          env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          with:
+              args: --sarif-file-output=snyk.sarif
   
           # Push the Snyk Code results into GitHub Code Scanning tab
         - name: Upload result to GitHub Code Scanning
