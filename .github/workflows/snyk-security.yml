@@ -55,8 +55,18 @@ jobs:
 
         # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
         # Use || true to not fail the pipeline
-      - name: Snyk Code test
-        run: snyk code test --sarif-file-output > snyk.sarif || true
+      #- name: Snyk Code test
+       # run: snyk code test --sarif-file-output > snyk.sarif || true
+
+      - name: Run Snyk to check configuration files for security issues
+        # Snyk can be used to break the build when it detects security issues.
+        # In this case we want to upload the issues to GitHub Code Scanning
+        continue-on-error: true
+        uses: snyk/actions/iac@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+            args: --sarif-file-output=snyk.sarif
 
         # Runs Snyk Open Source (SCA) analysis and uploads result to Snyk.
       - name: Snyk Open Source monitor
