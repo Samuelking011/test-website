@@ -53,4 +53,3 @@ jobs:
       - name: Run tests
         run: |
           python test_nginx.py
-        working-directory: test/test_nginx.py
