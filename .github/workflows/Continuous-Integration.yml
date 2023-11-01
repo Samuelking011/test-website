@@ -1,12 +1,12 @@
 name: continuous Integration (CI)
 
 on:
-  workflow_dispatch:
-  #push:
-    #branches:
-        #- main
+  #workflow_dispatch:
+  push:
+    branches:
+        - main
         
-  #pull_request:
+  pull_request:
 
 permissions:
         contents: write # for actions/checkout to fetch code
