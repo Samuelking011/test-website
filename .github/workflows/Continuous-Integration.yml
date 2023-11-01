@@ -8,9 +8,9 @@ on:
         
   #pull_request:
 
-permissions:
-    checks: write
-    contents: write
+#permissions:
+    #checks: write
+    #contents: write
 
 jobs:
     job1: 
