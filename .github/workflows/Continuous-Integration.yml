@@ -1,8 +1,7 @@
 name: Continuous Integration (CI)
 
 on:
-  workflow_dispatch:
-  #pull_request:
+  pull_request:
 
 permissions:
         contents: write # for actions/checkout to fetch code
