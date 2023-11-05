@@ -5,7 +5,7 @@
  * Licensed under the Hippocratic License 2.1 - http://firstdonoharm.dev
  *
  * Copyright (c) 2022 Animate.css
- */:root{--animate-duration:1s;--animate-delay:1s;--animate-repeat:1}.animate__animated{animation-duration:var(--animate-duration);animation-duration:1s;animation-duration:var(--animate-duration);animation-fill-mode:both}.animate__animated.animate__infinite{animation-iteration-count:infinite}.animate__animated.animate__repeat-1{animation-iteration-count:var(--animate-repeat);animation-iteration-count:1;animation-iteration-count:var(--animate-repeat)}.animate__animated.animate__repeat-2{animation-iteration-count:calc(var(--animate-repeat)*2);animation-iteration-count:2;animation-iteration-count:calc(var(--animate-repeat)*2)}.animate__animated.animate__repeat-3{animation-iteration-count:calc(var(--animate-repeat)*3);animation-iteration-count:3;animation-iteration-count:calc(var(--animate-repeat)*3)}.animate__animated.animate__delay-1s{animation-delay:var(--animate-delay);animation-delay:1s;animation-delay:var(--animate-delay)}.animate__animated.animate__delay-2s{animation-delay:calc(var(--animate-delay)*2);animation-delay:2s;animation-delay:calc(var(--animate-delay)*2)}.animate__animated.animate__delay-3s{animation-delay:calc(var(--animate-delay)*3);animation-delay:3s;animation-delay:calc(var(--animate-delay)*3)}.animate__animated.animate__delay-4s{animation-delay:calc(var(--animate-delay)*4);animation-delay:4s;animation-delay:calc(var(--animate-delay)*4)}.animate__animated.animate__delay-5s{animation-delay:calc(var(--animate-delay)*5);animation-delay:5s;animation-delay:calc(var(--animate-delay)*5)}.animate__animated.animate__faster{animation-duration:calc(var(--animate-duration)/2);animation-duration:.5s;animation-duration:calc(var(--animate-duration)/2)}.animate__animated.animate__fast{animation-duration:calc(var(--animate-duration)*.8);animation-duration:.8s;animation-duration:calc(var(--animate-duration)*.8)}.animate__animated.animate__slow{animation-duration:calc(var(--animate-duration)*2);animation-duration:2s;animation-duration:calc(var(--animate-duration)*2)}.animate__animated.animate__slower{animation-duration:calc(var(--animate-duration)*3);animation-duration:3s;animation-duration:calc(var(--animate-duration)*3)}
+ */:root{--animate-duration:1s;--animate-delay:1s;--animate-repeat:1}.animate__animated{animation-duration:1s;animation-duration:var(--animate-duration);animation-fill-mode:both}.animate__animated.animate__infinite{animation-iteration-count:infinite}.animate__animated.animate__repeat-1{animation-iteration-count:1;animation-iteration-count:var(--animate-repeat)}.animate__animated.animate__repeat-2{animation-iteration-count:2;animation-iteration-count:calc(var(--animate-repeat)*2)}.animate__animated.animate__repeat-3{animation-iteration-count:3;animation-iteration-count:calc(var(--animate-repeat)*3)}.animate__animated.animate__delay-1s{animation-delay:1s;animation-delay:var(--animate-delay)}.animate__animated.animate__delay-2s{animation-delay:2s;animation-delay:calc(var(--animate-delay)*2)}.animate__animated.animate__delay-3s{animation-delay:3s;animation-delay:calc(var(--animate-delay)*3)}.animate__animated.animate__delay-4s{animation-delay:4s;animation-delay:calc(var(--animate-delay)*4)}.animate__animated.animate__delay-5s{animation-delay:5s;animation-delay:calc(var(--animate-delay)*5)}.animate__animated.animate__faster{animation-duration:.5s;animation-duration:calc(var(--animate-duration)/2)}.animate__animated.animate__fast{animation-duration:.8s;animation-duration:calc(var(--animate-duration)*.8)}.animate__animated.animate__slow{animation-duration:2s;animation-duration:calc(var(--animate-duration)*2)}.animate__animated.animate__slower{animation-duration:3s;animation-duration:calc(var(--animate-duration)*3)}
 
 @media (prefers-reduced-motion:reduce),print{.animate__animated{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}.animate__animated[class*="Out"]{opacity:0}}
 
@@ -55,7 +55,7 @@
 
 @keyframes heartBeat{0%{transform:scale(1)}14%{transform:scale(1.3)}28%{transform:scale(1)}42%{transform:scale(1.3)}70%{transform:scale(1)}}
 
-@keyframes heartBeat{0%{transform:scale(1)}14%{transform:scale(1.3)}28%{transform:scale(1)}42%{transform:scale(1.3)}70%{transform:scale(1)}}.animate__heartBeat{animation-duration:calc(var(--animate-duration)*1.3);animation-duration:1.3s;animation-duration:calc(var(--animate-duration)*1.3);animation-name:heartBeat;animation-timing-function:ease-in-out}
+@keyframes heartBeat{0%{transform:scale(1)}14%{transform:scale(1.3)}28%{transform:scale(1)}42%{transform:scale(1.3)}70%{transform:scale(1)}}.animate__heartBeat{animation-duration:1.3s;animation-duration:calc(var(--animate-duration)*1.3);animation-name:heartBeat;animation-timing-function:ease-in-out}
 
 @keyframes backInDown{0%{opacity:.7;transform:translateY(-1200px) scale(.7)}80%{opacity:.7;transform:translateY(0) scale(.7)}100%{opacity:1;transform:scale(1)}}
 
@@ -91,7 +91,7 @@
 
 @keyframes bounceIn{0%,20%,40%,60%,80%,100%{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}100%{opacity:1;transform:scaleX(1)}}
 
-@keyframes bounceIn{0%,20%,40%,60%,80%,100%{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}100%{opacity:1;transform:scaleX(1)}}.animate__bounceIn{animation-duration:calc(var(--animate-duration)*.75);animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:bounceIn}
+@keyframes bounceIn{0%,20%,40%,60%,80%,100%{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}100%{opacity:1;transform:scaleX(1)}}.animate__bounceIn{animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:bounceIn}
 
 @keyframes bounceInDown{0%,60%,75%,90%,100%{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0) scaleY(3)}60%{opacity:1;transform:translate3d(0,25px,0) scaleY(.9)}75%{transform:translate3d(0,-10px,0) scaleY(.95)}90%{transform:translate3d(0,5px,0) scaleY(.985)}100%{transform:translateZ(0)}}
 
@@ -111,7 +111,7 @@
 
 @keyframes bounceOut{20%{transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;transform:scale3d(1.1,1.1,1.1)}100%{opacity:0;transform:scale3d(.3,.3,.3)}}
 
-@keyframes bounceOut{20%{transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;transform:scale3d(1.1,1.1,1.1)}100%{opacity:0;transform:scale3d(.3,.3,.3)}}.animate__bounceOut{animation-duration:calc(var(--animate-duration)*.75);animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:bounceOut}
+@keyframes bounceOut{20%{transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;transform:scale3d(1.1,1.1,1.1)}100%{opacity:0;transform:scale3d(.3,.3,.3)}}.animate__bounceOut{animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:bounceOut}
 
 @keyframes bounceOutDown{20%{transform:translate3d(0,10px,0) scaleY(.985)}40%,45%{opacity:1;transform:translate3d(0,-20px,0) scaleY(.9)}100%{opacity:0;transform:translate3d(0,2000px,0) scaleY(3)}}
 
@@ -247,11 +247,11 @@
 
 @keyframes flipOutX{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateX(-20deg)}100%{opacity:0;transform:perspective(400px) rotateX(90deg)}}
 
-@keyframes flipOutX{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateX(-20deg)}100%{opacity:0;transform:perspective(400px) rotateX(90deg)}}.animate__flipOutX{animation-duration:calc(var(--animate-duration)*.75);animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:flipOutX;backface-visibility:visible!important}
+@keyframes flipOutX{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateX(-20deg)}100%{opacity:0;transform:perspective(400px) rotateX(90deg)}}.animate__flipOutX{animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:flipOutX;backface-visibility:visible!important}
 
 @keyframes flipOutY{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateY(-15deg)}100%{opacity:0;transform:perspective(400px) rotateY(90deg)}}
 
-@keyframes flipOutY{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateY(-15deg)}100%{opacity:0;transform:perspective(400px) rotateY(90deg)}}.animate__flipOutY{animation-duration:calc(var(--animate-duration)*.75);animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:flipOutY;backface-visibility:visible!important}
+@keyframes flipOutY{0%{transform:perspective(400px)}30%{opacity:1;transform:perspective(400px) rotateY(-15deg)}100%{opacity:0;transform:perspective(400px) rotateY(90deg)}}.animate__flipOutY{animation-duration:.75s;animation-duration:calc(var(--animate-duration)*.75);animation-name:flipOutY;backface-visibility:visible!important}
 
 @keyframes lightSpeedInRight{0%{opacity:0;transform:translate3d(100%,0,0) skewX(-30deg)}60%{opacity:1;transform:skewX(20deg)}80%{transform:skewX(-5deg)}100%{transform:translateZ(0)}}
 
@@ -311,7 +311,7 @@
 
 @keyframes hinge{0%{animation-timing-function:ease-in-out}20%,60%{animation-timing-function:ease-in-out;transform:rotate(80deg)}40%,80%{animation-timing-function:ease-in-out;opacity:1;transform:rotate(60deg)}100%{opacity:0;transform:translate3d(0,700px,0)}}
 
-@keyframes hinge{0%{animation-timing-function:ease-in-out}20%,60%{animation-timing-function:ease-in-out;transform:rotate(80deg)}40%,80%{animation-timing-function:ease-in-out;opacity:1;transform:rotate(60deg)}100%{opacity:0;transform:translate3d(0,700px,0)}}.animate__hinge{animation-duration:calc(var(--animate-duration)*2);animation-duration:2s;animation-duration:calc(var(--animate-duration)*2);animation-name:hinge;transform-origin:top left}
+@keyframes hinge{0%{animation-timing-function:ease-in-out}20%,60%{animation-timing-function:ease-in-out;transform:rotate(80deg)}40%,80%{animation-timing-function:ease-in-out;opacity:1;transform:rotate(60deg)}100%{opacity:0;transform:translate3d(0,700px,0)}}.animate__hinge{animation-duration:2s;animation-duration:calc(var(--animate-duration)*2);animation-name:hinge;transform-origin:top left}
 
 @keyframes jackInTheBox{0%{opacity:0;transform:scale(.1) rotate(30deg);transform-origin:center bottom}50%{transform:rotate(-10deg)}70%{transform:rotate(3deg)}100%{opacity:1;transform:scale(1)}}
 
