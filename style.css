@@ -320,8 +320,8 @@ header p {
 
 /* == Services Section == */
 .services .container {
-    place-items: center center;
     display: grid;
+    place-items: center center;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
 }
