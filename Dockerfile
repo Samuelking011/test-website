@@ -16,5 +16,8 @@ COPY index.html ./
 COPY style.css ./
 COPY ./images ./images
 COPY ./js ./js
+COPY ./css ./css
+COPY ./HTML ./HTML
+COPY ./fontawesome ./fontawesome
 
 EXPOSE 3000

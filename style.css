@@ -55,7 +55,7 @@ section {
 
 .container {
     margin: 0 auto;
-    max-inline-size: 1100px;
+    max-width: 1100px;
 }
 
 .logo {
@@ -66,6 +66,11 @@ section {
 nav {
     position: relative;
     z-index: 99;
+}
+
+nav .container {
+    padding: 1em 2em;
+    max-width: 1200px;
 }
 
 nav .container > div, nav .menu {
@@ -88,7 +93,7 @@ nav ul li {
 nav .logo {
     display: inline-block;
     filter: drop-shadow(5px 5px 5px #ccc);
-    inline-size: 12em;
+    width: 12em;
 }
 
 nav .container .menu-btn{
@@ -101,7 +106,7 @@ header {
         url("images/background.png")
         center no-repeat;
     background-size: cover;
-    block-size: 100vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -141,7 +146,7 @@ header .content {
 }
 
 header .plane {
-    animation-delay: 5000ms;
+    animation-delay: 500ms;
     max-width: 1000px;
     position: absolute;
     right: 0;
@@ -179,6 +184,7 @@ header p {
 }
 
 .btn-primary {
+    border: 1px var(--secondary-color) solid;
     background: var(--primary-color);
     margin-right: 0.5em;
 }
@@ -195,6 +201,16 @@ header p {
 .btn-secondary:hover {
     background: var(--secondary-color);
     color: #fff;
+}
+
+.btn-third {
+    border: 3px blue solid;
+    color: var(---alt-color);
+}
+
+.btn-third:hover {
+    background: #ffff00;
+    color: #008000;
 }
 
 /* == About Section == */
@@ -216,6 +232,7 @@ header p {
     width: 100%;
 }
 
+/*=== Cards ===*/
 .card {
     background: var(--primary-color);
     box-shadow: 0 0 25px rgb(0 0 0 / 20%);
@@ -252,7 +269,7 @@ header p {
     min-height: 110%;
     padding: 2em;
     position: absolute;
-    right: 0;
+    right: 0em;
     top: 50%;
     transform: translateY(-50%);
     width: 50%;
@@ -266,18 +283,20 @@ header p {
     margin-bottom: 2em;
 }
 
+/*=== Swipers ===*/
 .swiper {
     background: var(--alt-color);
     height: 100%;
     min-height: 10em;
     width: 100%;
+    
 }
 
 .swiper-slide {
     background: var(--alt-color);
 }
 
-.planeSwiper .swiper-slide > div, .aboutSwiper .swiper-slide {
+.planeSwiper .swiper-slide > div, .swiper .swiper-slide {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -303,8 +322,9 @@ header p {
 .services .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    place-items: center center;
     text-align: center;
+    justify-items: center;
+    align-items: center;
 }
 
 .service {
@@ -347,7 +367,7 @@ header p {
 }
 
 .contact p {
-    margin: 0 auto 2em;
+    margin: 0 auto 2em auto;
     max-width: 40em;
 }
 
@@ -439,13 +459,13 @@ footer .main-link a:hover {
 }
 
 /* == Responsive Design == */
-@media screen and (width >= 1300px) {
+@media screen and (min-width: 1300px) {
     header h1 {
        font-size: 3.7em; 
     }
 }
 
-@media screen and (width <= 1000px) {
+@media screen and (max-width: 1000px) {
     nav {
         background: #fff;
     }
@@ -505,7 +525,7 @@ footer .main-link a:hover {
     }
 }
 
-@media screen and (width <= 800px) {
+@media screen and (max-width: 800px) {
     html {
         font-size: 14px;
     }
@@ -514,7 +534,7 @@ footer .main-link a:hover {
         flex-direction: column;
     }
 
-    .service .container {
+    .services .container {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -551,7 +571,7 @@ footer .main-link a:hover {
 }
 
 @media screen and (width <= 500px) {
-    .service .container {
+    .services .container {
         grid-template-columns: 1fr;
     }
 
