@@ -103,7 +103,6 @@
   }
 
   .swiper-backface-hidden .swiper-slide {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     transform: translateZ(0);
   }
@@ -493,7 +492,6 @@
   }
 
   button.swiper-pagination-bullet {
-    appearance: none;
             appearance: none;
     border: none;
     box-shadow: none;
@@ -754,7 +752,6 @@
   }
 
   .swiper-cube .swiper-slide {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     height: 100%;
     pointer-events: none;
@@ -796,9 +793,9 @@
 
   .swiper-cube .swiper-cube-shadow:before {
     background: #000;
-    inset: 0;
     content: '';
     filter: blur(50px);
+    inset: 0;
     position: absolute;
   }
 
@@ -812,7 +809,6 @@
   .swiper-cube .swiper-slide-shadow-cube.swiper-slide-shadow-bottom,
   .swiper-cube .swiper-slide-shadow-cube.swiper-slide-shadow-left,
   .swiper-cube .swiper-slide-shadow-cube.swiper-slide-shadow-right {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     z-index: 0;
   }
@@ -823,7 +819,6 @@
   }
 
   .swiper-flip .swiper-slide {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     pointer-events: none;
     z-index: 1;
@@ -843,14 +838,12 @@
   .swiper-flip .swiper-slide-shadow-flip.swiper-slide-shadow-bottom,
   .swiper-flip .swiper-slide-shadow-flip.swiper-slide-shadow-left,
   .swiper-flip .swiper-slide-shadow-flip.swiper-slide-shadow-right {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     z-index: 0;
   }
 
   /* Flip slide shadows end */
   .swiper-creative .swiper-slide {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     overflow: hidden;
     transition-property: transform, opacity, height;
@@ -861,7 +854,6 @@
   }
 
   .swiper-cards .swiper-slide {
-    backface-visibility: hidden;
             backface-visibility: hidden;
     overflow: hidden;
     transform-origin: center bottom;
