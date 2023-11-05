@@ -28,9 +28,9 @@ jobs:
           npm ci
 
       - name: Run linters
-        run: npx stylelint "**/*.css"
-        #uses: wearerequired/lint-action@v2.3.0
-        #continue-on-error: true
-        #with:
-          #stylelint: true
-          #auto_fix: true
+        #run: npx stylelint "**/*.css"
+        uses: wearerequired/lint-action@v2.3.0
+        continue-on-error: true
+        with:
+          stylelint: true
+          auto_fix: true
