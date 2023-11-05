@@ -2,12 +2,10 @@
 new WOW().init();
 
 //initialize swippers
-
-  
 document.addEventListener('DOMContentLoaded', function() {
     var aboutSwipper = new Swiper('.aboutSwipper', {
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 50,
         freeMode: true,
         pagination: {
           el: '.swiper-pagination',
@@ -15,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         breakpoints: {
           599: {
-            slidesPerView: 1,
-            spaceBetween: 30
+            slidesPerView: 2,
+            spaceBetweenSlides: 50
           },
           // Add more breakpoints as needed
         }
@@ -34,15 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  //Get The Elements
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('.menu');
 
-/*//Get The Elements
-const menu = document.querySelector(".menu");
-const menuBtn = document.querySelector(".menu-btn");*/
-
-//Toggle the navbar menu on click Open/Close
-/*menuBtn.addEventListener("click", () => {
+  //Toggle the navbar menu on click Open/Close
+  menuBtn.addEventListener('click', () => {
     menu.classList.toggle('nav-toggle');
-});*/
+  });
 
-//Get the current year and date into the HTML
-/*document.querySelector(".year").innerHTML = new Date().getFullYear();*/
+  //Get the current year and date into the HTML
+  document.querySelector(".year").innerHTML = new Date().getFullYear();
+
+});
+
