@@ -69,8 +69,8 @@ nav {
 }
 
 nav .container {
-    padding: 1em 2em;
     max-width: 1200px;
+    padding: 1em 2em;
 }
 
 nav .container > div, nav .menu {
@@ -184,8 +184,8 @@ header p {
 }
 
 .btn-primary {
-    border: 1px var(--secondary-color) solid;
     background: var(--primary-color);
+    border: 1px var(--secondary-color) solid;
     margin-right: 0.5em;
 }
 
@@ -209,7 +209,7 @@ header p {
 }
 
 .btn-third:hover {
-    background: #ffff00;
+    background: #ff0;
     color: #008000;
 }
 
@@ -232,7 +232,7 @@ header p {
     width: 100%;
 }
 
-/*=== Cards ===*/
+/* === Cards === */
 .card {
     background: var(--primary-color);
     box-shadow: 0 0 25px rgb(0 0 0 / 20%);
@@ -269,7 +269,7 @@ header p {
     min-height: 110%;
     padding: 2em;
     position: absolute;
-    right: 0em;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 50%;
@@ -283,7 +283,7 @@ header p {
     margin-bottom: 2em;
 }
 
-/*=== Swipers ===*/
+/* === Swipers === */
 .swiper {
     background: var(--alt-color);
     height: 100%;
@@ -320,11 +320,10 @@ header p {
 
 /* == Services Section == */
 .services .container {
+    place-items: center center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
-    justify-items: center;
-    align-items: center;
 }
 
 .service {
@@ -367,7 +366,7 @@ header p {
 }
 
 .contact p {
-    margin: 0 auto 2em auto;
+    margin: 0 auto 2em;
     max-width: 40em;
 }
 
@@ -459,13 +458,13 @@ footer .main-link a:hover {
 }
 
 /* == Responsive Design == */
-@media screen and (min-width: 1300px) {
+@media screen and (width >= 1300px) {
     header h1 {
        font-size: 3.7em; 
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (width <= 1000px) {
     nav {
         background: #fff;
     }
@@ -525,7 +524,7 @@ footer .main-link a:hover {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (width <= 800px) {
     html {
         font-size: 14px;
     }
