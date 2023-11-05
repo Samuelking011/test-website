@@ -1,8 +1,7 @@
 name: GitGuardian scan
 
 on:
-  workflow_dispatch
-  #[push, pull_request]
+  [push, pull_request]
 
 jobs:
   scanning:
