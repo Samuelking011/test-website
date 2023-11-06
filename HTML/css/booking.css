@@ -4,6 +4,9 @@ body {
     background-position: center;
 }
 
+#option2-info, #option3-info, .additional-info2 {
+    display: none;
+}
 
 .booking-form-box{
     max-width: 350px;
@@ -64,6 +67,11 @@ input::placeholder {
 
 .input-grp {
     width: 151px;
+    display: inline-block;
+}
+
+.input-grp2 {
+    width: 100%;
     display: inline-block;
 }
 

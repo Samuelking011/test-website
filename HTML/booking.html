@@ -10,25 +10,59 @@
 <body>
     <div class="booking-form-box">
         <div class="radio-btn">
-            <input type="radio" class="btn" name="check" checked="checked" id="showInfor"><span>Roundtrip</span>
-            <input type="radio" class="btn" name="check"><span>One Way</span>
-            <input type="radio" class="btn" name="check"><span>Multi-City</span>
+            <input type="radio" class="btn" name="check" checked="checked" id="showInfor" value="option1"><span>Roundtrip</span>
+            <input type="radio" class="btn" name="check" value="option2"><span>One Way</span>
+            <input type="radio" class="btn" name="check" value="option3"><span>Multi-City</span>
         </div>
 
-        <div class="booking-form">
-            <label>Flying From</label>
-            <input type="text" class="form-control" placeholder="City or Airport">
-            <label>Flying To</label>
-            <input type="text" class="form-control" placeholder="City or Airport">
+        <div class="booking-form" id="additional-info">
+            <div id="option1-info" class="info-content">
+                <label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+                <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
 
-            <div class="input-grp">
-                <label>Departing</label>
-                <input type="date" class="form-control select-date">
+                <div class="input-grp">
+                    <label>Departing</label>
+                    <input type="date" class="form-control select-date">
+                </div>
+
+                <div class="input-grp">
+                    <label>Returning</label>
+                    <input type="date" class="form-control select-date">
+                </div>
             </div>
 
-            <div class="input-grp">
-                <label>Returning</label>
-                <input type="date" class="form-control select-date">
+            <div id="option2-info" class="info-content">
+                <label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+                <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+
+                <div class="input-grp2">
+                    <label>Departing</label>
+                    <input type="date" class="form-control select-date">
+                </div>
+            </div>
+            
+            <div id="option3-info" class="info-content">
+                <label>Flying From</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+                <label>Flying To</label>
+                <input type="text" class="form-control" placeholder="City or Airport">
+
+                <div class="input-grp2">
+                    <label>Departing</label>
+                    <input type="date" class="form-control select-date">
+                </div>
+
+                <div id="additional-info2" class="additional-info2">
+                    
+                </div>
+
+                <button id="show-info" class="input-grp">+</button>
+                <button id="hide-info" class="input-grp">-</button>
+                
             </div>
 
             <div class="input-grp">
@@ -53,6 +87,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/booking.js"></script>
 </body>
 </html>
 
