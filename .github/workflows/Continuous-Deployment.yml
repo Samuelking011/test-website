@@ -33,7 +33,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/website:latest
 
   job2:
-    name: Run Container status
+    name: Run and Apply Terraform
     runs-on: ubuntu-latest
     needs: job1
     steps:
