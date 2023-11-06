@@ -1,7 +1,7 @@
 body {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("./images/background.jpg");
-    background-size: cover;
+    background-image: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),url("./images/background.jpg");
     background-position: center;
+    background-size: cover;
 }
 
 #option2-info, #option3-info, .additional-info2 {
@@ -9,9 +9,9 @@ body {
 }
 
 .booking-form-box{
-    max-width: 350px;
     border: 1px solid #ced4da;
     margin: 10% auto 0;
+    max-width: 350px;
 
 }
 
@@ -20,34 +20,34 @@ body {
 }
 
 .radio-btn .btn {
-    margin: 20px 10px 20px 0;
     box-shadow: none;
+    margin: 20px 10px 20px 0;
 }
 
-.radio-btn .btn::after {
-    content: '';
-    height: 15px;
-    width: 15px;
-    top: -2px;
-    left: -1px;
+.radio-btn .btn:after {
     background-color: #fff;
-    position: relative;
-    display: inline-block;
     border: 3px solid #fff;
-    visibility: visible;
     border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: 15px;
+    left: -1px;
+    position: relative;
+    top: -2px;
+    visibility: visible;
+    width: 15px;
 }
 
-.radio-btn .btn:checked::after {
-    content: '';
+.radio-btn .btn:checked:after {
     background-color: #000;
+    content: '';
     transition: 0.5s;
 }
 
 .radio-btn span {
     color: #fff;
-    margin-right: 5px;
     font-size: 12px;
+    margin-right: 5px;
 }
 
 .booking-form {
@@ -55,10 +55,10 @@ body {
 }
 
 .booking-form label {
+    color: #fff;
+    font-size: 12px;
     margin-bottom: 5px;
     margin-top: 10px;
-    font-size: 12px;
-    color: #fff;
 }
 
 input::placeholder {
@@ -66,25 +66,25 @@ input::placeholder {
 }
 
 .input-grp {
-    width: 151px;
     display: inline-block;
+    width: 151px;
 }
 
 .input-grp2 {
-    width: 100%;
     display: inline-block;
+    width: 100%;
 }
 
 .form-control {
-    font-size: 12px !important;
-    border-radius: 0 !important;
-    color: #fff !important;
     background: transparent !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
+    color: #fff !important;
+    font-size: 12px !important;
 }
 
 .select-date::-webkit-inner-spin-button, .select-date::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 
 }
@@ -94,13 +94,13 @@ input::placeholder {
 }
 
 .custom-select {
-    width: 100%;
+    background: transparent !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
     color: #fff !important;
     font-size: 12px !important;
-    border: 1px solid #ced4da !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
+    width: 100%;
 }
 
 .custom-select option {
@@ -108,13 +108,13 @@ input::placeholder {
 }
 
 .flight {
-    width: 100%;
-    padding: 9px 0 !important;
-    font-size: 12px !important;
-    border: 1px solid #ced4da !important;
     background: transparent !important;
+    border: 1px solid #ced4da !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    font-size: 12px !important;
+    padding: 9px 0 !important;
+    width: 100%;
 }
 
 .flight:hover {
