@@ -2,7 +2,7 @@
 
 function searchFlights() {
     const baseUrl = 'https://test.api.amadeus.com/v2/shopping/flight-offers';
-    const accessToken = 'dZ0PAj3yZBdfoAebAd3Gjc9m6Hgx'; // Replace with your actual access token
+    const accessToken = 'Enter_access_Token_Here'; // Replace with your actual access token
 
     const originLocationCode = document.getElementById('origin').value;
     const destinationLocationCode = document.getElementById('destination').value;
