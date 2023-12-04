@@ -9,6 +9,7 @@ permissions:
         checks: write
         
 jobs:
+    name: this is a test
     job1: 
       name: Run HTML Unit Test
       runs-on: ubuntu-latest

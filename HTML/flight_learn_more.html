@@ -19,6 +19,7 @@
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="../js/wow.min.js"></script>
     <script src="../js/background.js"></script>
+    <script src="../js/flm.js"></script>
 </body>
 </html>
 
@@ -59,6 +60,11 @@
 </header>
 
 <section class="about_us">
+    <h1>Weather App</h1>
+    <label for="cityInput">Enter City:</label>
+    <input type="text" id="cityInput">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherInfo"></div>
 </section>
 
 <footer>
