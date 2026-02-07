@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1.29.5-alpine3.23
 
 # Create app directory
 WORKDIR /usr/share/nginx/html
